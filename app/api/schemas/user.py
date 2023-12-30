@@ -12,6 +12,13 @@ class UserCreate(UserBase):
     last_name: Optional[str] = None
 
 
+class UserUpdate(UserBase):
+    email: Optional[str] = None
+    password: Optional[str] = None
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+
+
 class UserLogin(UserBase):
     pass
 

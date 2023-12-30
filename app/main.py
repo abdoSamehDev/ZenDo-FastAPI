@@ -5,7 +5,7 @@ from app.api.routers import task, user
 from dotenv import load_dotenv
 import os
 
-app = FastAPI()
+app = FastAPI(docs_url=None, redoc_url=None)
 
 load_dotenv()
 
