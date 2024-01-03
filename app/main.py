@@ -1,5 +1,5 @@
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from starlette.middleware.sessions import SessionMiddleware
 from app.api.routers import task, user
 from dotenv import load_dotenv
@@ -21,6 +21,17 @@ app.add_middleware(SessionMiddleware, secret_key=SECRET_KEY)
 #     lifetime_seconds=3600,
 #     session_cookie="my_user_session",
 # )
+
+
+# test the server is running
+@app.get("/")
+def home():
+    return Response("The server is running.")
+
+
+@app.get("/test")
+def test():
+    return Response("This is a test msg!")
 
 
 # Include routers here as you create them
